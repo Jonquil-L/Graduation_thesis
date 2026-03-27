@@ -42,20 +42,57 @@
 \usepackage[top=25mm,bottom=20mm,left=25mm,right=20mm]{geometry}
 
 % ==================== 字体设置 ====================
-% 英文主字体
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
+% 使用方式：
+%   方案 A（Overleaf / 无系统字体）：上传字体到 fonts/ 文件夹，使用 Path 加载
+%   方案 B（本地编译 + 已安装字体）：注释方案 A，取消方案 B 注释
+%
+% -------- 方案 A：Overleaf（通过文件路径加载上传的字体）--------
+% 英文字体（Overleaf 自带 TeX Gyre 系列，与 Times New Roman / Arial 等价）
+\setmainfont{texgyretermes}[
+    Extension      = .otf,
+    UprightFont    = *-regular,
+    BoldFont       = *-bold,
+    ItalicFont     = *-italic,
+    BoldItalicFont = *-bolditalic,
+]
+\setsansfont{texgyreheros}[
+    Extension      = .otf,
+    UprightFont    = *-regular,
+    BoldFont       = *-bold,
+    ItalicFont     = *-italic,
+    BoldItalicFont = *-bolditalic,
+]
+% 中文字体（Fandol 系列，Overleaf/TeX Live 自带，与宋黑楷仿等价）
+\setCJKmainfont{FandolSong}[
+    Extension   = .otf,
+    UprightFont = *-Regular,
+    BoldFont    = *-Bold,
+]
+\setCJKsansfont{FandolHei}[
+    Extension   = .otf,
+    UprightFont = *-Regular,
+    BoldFont    = *-Bold,
+]
+\setCJKmonofont{FandolFang}[
+    Extension   = .otf,
+    UprightFont = *-Regular,
+]
+\setCJKfamilyfont{zhsong}{FandolSong}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold]
+\setCJKfamilyfont{zhhei}{FandolHei}[Extension=.otf,UprightFont=*-Regular,BoldFont=*-Bold]
+\setCJKfamilyfont{zhkai}{FandolKai}[Extension=.otf,UprightFont=*-Regular]
+\setCJKfamilyfont{zhfs}{FandolFang}[Extension=.otf,UprightFont=*-Regular]
 
-% 中文字体族（macOS 字体名）
-% 如缺少字体请参照 README 说明安装
-\setCJKmainfont{STSong}                        % 宋体（华文宋体，系统自带）
-\setCJKsansfont{PingFang SC}                    % 黑体（PingFang 替代，系统自带）
-\setCJKmonofont{STFangsong}                    % 仿宋（需安装）
-
-\setCJKfamilyfont{zhsong}{STSong}
-\setCJKfamilyfont{zhhei}{PingFang SC}
-\setCJKfamilyfont{zhkai}{STKaiti}              % 楷体（需安装）
-\setCJKfamilyfont{zhfs}{STFangsong}            % 仿宋（需安装）
+% -------- 方案 B：本地编译（macOS 已安装字体）--------
+% 取消以下注释，并注释掉上方方案 A 的全部字体设置
+% \setmainfont{Times New Roman}
+% \setsansfont{Arial}
+% \setCJKmainfont{Songti SC}[BoldFont=Songti SC Bold]
+% \setCJKsansfont{PingFang SC}
+% \setCJKmonofont{STFangsong}
+% \setCJKfamilyfont{zhsong}{Songti SC}[BoldFont=Songti SC Bold]
+% \setCJKfamilyfont{zhhei}{PingFang SC}
+% \setCJKfamilyfont{zhkai}{STKaiti}
+% \setCJKfamilyfont{zhfs}{STFangsong}
 
 \newcommand*{\song}{\CJKfamily{zhsong}}  % 宋体
 \newcommand*{\hei}{\CJKfamily{zhhei}}    % 黑体
