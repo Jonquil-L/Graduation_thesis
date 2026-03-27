@@ -47,14 +47,15 @@
 \setsansfont{Arial}
 
 % 中文字体族（macOS 字体名）
-\setCJKmainfont{STSong}            % 正文宋体（华文宋体）
-\setCJKsansfont{STHeiti}           % 无衬线黑体（华文黑体）
-\setCJKmonofont{STFangsong}        % 等宽仿宋（华文仿宋）
+% 如缺少字体请参照 README 说明安装
+\setCJKmainfont{STSong}                        % 宋体（华文宋体，系统自带）
+\setCJKsansfont[BoldFont=Heiti SC]{Heiti SC}   % 黑体（系统自带）
+\setCJKmonofont{STFangsong}                    % 仿宋（需安装）
 
 \setCJKfamilyfont{zhsong}{STSong}
-\setCJKfamilyfont{zhhei}{STHeiti}
-\setCJKfamilyfont{zhkai}{STKaiti}
-\setCJKfamilyfont{zhfs}{STFangsong}
+\setCJKfamilyfont{zhhei}[BoldFont=Heiti SC]{Heiti SC}
+\setCJKfamilyfont{zhkai}{STKaiti}              % 楷体（需安装）
+\setCJKfamilyfont{zhfs}{STFangsong}            % 仿宋（需安装）
 
 \newcommand*{\song}{\CJKfamily{zhsong}}  % 宋体
 \newcommand*{\hei}{\CJKfamily{zhhei}}    % 黑体
